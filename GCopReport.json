@@ -1,3 +1,32 @@
 {
-  "Items": []
+  "Items": [
+    {
+      "Analyzer": "UseStringCollectionIntersectsAnalyzer",
+      "OccurrenceCount": 1,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "MARIOPC"
+    },
+    {
+      "Analyzer": "RepeatedExpressionAnalyzer",
+      "OccurrenceCount": 1,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "MARIOPC"
+    },
+    {
+      "Analyzer": "RemoveUnnecessaryBracesAnalyzer",
+      "OccurrenceCount": 1,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "MARIOPC"
+    },
+    {
+      "Analyzer": "AutomaticPropertyAnalyzer",
+      "OccurrenceCount": 1,
+      "Exceptions": null,
+      "SentToServer": true,
+      "InstallationName": "MARIOPC"
+    }
+  ]
 }

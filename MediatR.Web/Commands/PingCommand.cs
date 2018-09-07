@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR.Web.CommandHandlers;
+using MediatR.Web.Model;
 
 namespace MediatR.Web.Commands
 {
   /// <summary>
   /// The ping command class.
   /// </summary>
-  public class PingCommand : IRequest<string>
+  public class PingCommand : IRequest<IEnumerable<ProjectModel>>
   {
     /// <summary>
     /// The message (readonly).

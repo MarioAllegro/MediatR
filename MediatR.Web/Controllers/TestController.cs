@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MediatR.Web.Commands;
+using MediatR.Web.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatR.Web.Controllers
@@ -14,26 +13,22 @@ namespace MediatR.Web.Controllers
   [ApiController]
   public class TestController : ControllerBase
   {
-    public TestController(IMediator mediator)
-    {
-      this.Mediator = mediator;
-    }
+    public TestController(IMediator mediator) => this.Mediator = mediator;
 
     /// <summary>
     /// Gets the mediator.
     /// </summary>
-    IMediator Mediator { get; }
+    private IMediator Mediator { get; }
 
     // GET api/values
     /// <summary>
     /// Get.
     /// </summary>
-    /// <returns>The <see cref="T:ActionResult{IEnumerable{string}}"/>.</returns>
     [HttpGet]
-    public async Task<string> GetAsync()
-    {
-      var pingCommandPromise = this.Mediator.Send(new PingCommand("test"));
-      return await pingCommandPromise;
-    }
+    public Task<IEnumerable<ProjectModel>> GetAsync() => this.Mediator.Send(new PingCommand("test"));
+
+    [HttpPost]
+    [Route("Add")]
+    public void AddProject(AddProjectCommand addProjectCommand) => this.Mediator.Send(addProjectCommand);
   }
 }
